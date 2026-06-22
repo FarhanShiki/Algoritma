@@ -1,0 +1,15 @@
+const prompt = require("prompt-sync")({ sigint:true });
+let d1 = parseInt(prompt("Tanggal 1 (dd):"));
+let m1 = parseInt(prompt("Bulan 1 (mm):"));
+let y1 = parseInt(prompt("Tahun 1 (yy):"));
+let d2 = parseInt(prompt("Tanggal 2 (dd):"));
+let m2 = parseInt(prompt("Bulan 2 (mm):"));
+let y2 = parseInt(prompt("Tahun 2 (yy):"));
+let total1 = y1 * 365 + m1 * 30 + d1;
+let total2 = y2 * 365 + m2 * 30 + d2;
+let selisih = Math.abs(total2 - total1);
+let tahun = Math.floor(selisih / 365);
+let sisa = selisih % 365;
+let bulan = Math.floor(sisa / 30);
+let hari = sisa % 30;
+console.log(`Selisih: ${tahun} tahun ${bulan} bulan ${hari} hari`);
